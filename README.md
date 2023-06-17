@@ -18,10 +18,18 @@ Information about the [toolchain is here](https://github.com/electro-smith/Daisy
 
 You also need to clone [libDaisy](https://github.com/electro-smith/libDaisy) and [DaisySP](https://github.com/electro-smith/DaisySP)
 
-[libDaisy Docs](https://electro-smith.github.io/libDaisy/index.html)
-[DaisySP Docs](https://electro-smith.github.io/DaisySP/index.html)
-[Simple Synth Guide](https://www.youtube.com/watch?v=qIpW3MuebBE&list=PLBrCYHmNvufXhqGnm0eNpsfLcktGQkS-q&index=2)
+- [libDaisy Docs](https://electro-smith.github.io/libDaisy/index.html)
+- [DaisySP Docs](https://electro-smith.github.io/DaisySP/index.html)
+- [Simple Synth Guide](https://www.youtube.com/watch?v=qIpW3MuebBE&list=PLBrCYHmNvufXhqGnm0eNpsfLcktGQkS-q&index=2)
 
+
+### Build and Flash
+```
+make -C ../DaisySP
+make -C ../libDaisy
+make
+make program-dfu
+```
 
 ### Information
 A0, A1 and A2 are setup as ADC's to read potentiometers, D18 is setup as a GPIO switch/button.
@@ -49,3 +57,6 @@ A0, A1 and A2 are setup as ADC's to read potentiometers, D18 is setup as a GPIO 
 // VIN           47  |       |   02    D1
 // DGND          48  |       |   01    D0
 ```
+
+### TODO
+- Make a `make help` command
