@@ -9,6 +9,16 @@ class Filter {
             this->_flt.Init(sampleRate);
         }
 
+        void SetFreq(float freq) {
+            float fltFreq = daisysp::fmap(freq, 60, 15000);
+            this->_flt.SetFreq(fltFreq);
+        }
+
+        void SetRes(float res) {
+            float fltRes = daisysp::fmap(res, 0, 0.5);
+            this->_flt.SetRes(fltRes);
+        }
+
         void SetTimbre(float timbre) {
             float fltFreq = daisysp::fmap(timbre, 60, 15000);
             float fltRes = daisysp::fmap(1.0f - timbre, 0, 0.5);
